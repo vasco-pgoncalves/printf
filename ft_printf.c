@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpinto-g <vpinto-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vascopinto <vascopinto@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 12:59:41 by vpinto-g          #+#    #+#             */
-/*   Updated: 2025/05/15 18:09:31 by vpinto-g         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:56:07 by vascopinto       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	ft_format_convert (va_list args, const char format)
 {
 	unsigned int	count;
-	
+    
 	count = 0;
 	if (format == 'c')
 		count += ft_putchar(va_arg(args, int));
@@ -25,6 +25,14 @@ static int	ft_format_convert (va_list args, const char format)
 		count += ft_putnbr(va_arg(args, int));
 	else if (format == 'p')
 		count += ft_putadress(va_arg(args, t_ull));
+    else if (format == 'i')
+        count += ft_putnbr(va_arg(args, int));
+    else if (format == 'u')
+        count += ft_putnbr(va_arg(args, unsigned int));
+    else if (format == 'x')
+        count += ft_hexa(va_arg(args, unsigned int), format);
+    else if (format == 'X')
+        count += ft_hexa(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		count += ft_putchar('%');
 	return (count);

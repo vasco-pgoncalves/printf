@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpinto-g <vpinto-g@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vascopinto <vascopinto@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:54:28 by vpinto-g          #+#    #+#             */
-/*   Updated: 2025/05/15 17:22:56 by vpinto-g         ###   ########.fr       */
+/*   Updated: 2025/05/19 17:47:01 by vascopinto       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ typedef long long			t_ll;
 int ft_putchar(char c);
 int ft_printstr(const char *s);
 int ft_putnbr(long n);
+int ft_putadress(t_ull adress);
+int	ft_hexa(t_ull hexa, char c);
 
 #endif
